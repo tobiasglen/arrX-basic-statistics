@@ -37,7 +37,6 @@ if __name__ == '__main__':
         arrInstance.add_to_dict(target_dict=arrInstance.download_methods, target_key=f'{"torrent" if item.get("data", {}).get("protocol") == "2" else "usenet"}')
 
         arrInstance.byte_total_size += int(item.get('data', {}).get('size', 0))
-        arrInstance.total_grabs += 1
 
         try:
             arrInstance.total_repacks += 1 if item['quality']['revision']['isRepack'] else 0
